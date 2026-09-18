@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CleanSpot – Report an Issue
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+
+    <!-- Leaflet -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+</head>
+
+
+<body class="report-page">
+
+
+    <!-- ========================================================
+         HEADER
+    ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="brand"
+            >
+
+                <span class="brand-mark">
+                    🌿
+                </span>
+
+                <span class="brand-text">
+
+                    <strong>
+                        CleanSpot
+                    </strong>
+
+                    <span>
+                        Report Today, Cleaner Tomorrow
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+
+                <a href="{{ url_for('home') }}#how-it-works">
+                    How It Works
+                </a>
+
+                <a
+                    href="{{ url_for('report_page') }}"
+                    class="active"
+                >
+                    Report
+                </a>
+
+                <a href="{{ url_for('home') }}#impact">
+                    Impact
+                </a>
+
+            </nav>
+
+
+            <a
+                href="{{ url_for('report_page') }}"
+                class="header-cta"
+            >
+                Report Now
+            </a>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================================
+         MAIN REPORT AREA
+    ========================================================= -->
+
+    <main class="report-layout">
+
+
+        <!-- ====================================================
+             LEFT INTRO
+        ===================================================== -->
+
+        <aside class="report-intro">
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="back-link"
+            >
+                ← Back to Home
+            </a>
+
+
+            <div class="report-kicker">
+                SMART COMMUNITY REPORTING
+            </div>
+
+
+            <h1 class="report-title">
+
+                See it.
+
+                <span>
+                    Snap it.
+                </span>
+
+                Clean it.
+
+            </h1>
+
+
+            <p class="report-description">
+
+                Spot a garbage problem in your surroundings?
+                Capture it, confirm the location, and let
+                CleanSpot analyze the image before you submit
+                the report.
+
+            </p>
+
+
+            <div class="report-features">
+
+
+                <div class="report-feature">
+
+                    <div class="report-feature-icon">
+                        ◈
+                    </div>
+
+                    <strong>
+                        AI
+                    </strong>
+
+                    <span>
+                        Image analysis
+                    </span>
+
+                </div>
+
+
+                <div class="report-feature">
+
+                    <div class="report-feature-icon">
+                        ●
+                    </div>
+
+                    <strong>
+                        GPS
+                    </strong>
+
+                    <span>
+                        Live location
+                    </span>
+
+                </div>
+
+
+                <div class="report-feature">
+
+                    <div class="report-feature-icon">
+                        ✓
+                    </div>
+
+                    <strong>
+                        Report
+                    </strong>
+
+                    <span>
+                        Direct submission
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="report-note">
+
+                <p>
+                    “A clear photo and a precise location
+                    can make a report much more useful.”
+                </p>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- ====================================================
+             RIGHT REPORT CARD
+        ===================================================== -->
+
+        <section class="report-card">
+
+
+            <div class="report-card-header">
+
+                <div class="report-card-kicker">
+                    REPORT AN ISSUE
+                </div>
+
+                <h2>
+                    Tell us what you found.
+                </h2>
+
+                <p>
+                    Capture or upload a photo, confirm your
+                    current location, review the AI result,
+                    and send your report.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STEP 1
+            ================================================== -->
+
+            <section class="report-section">
+
+
+                <div class="step-heading">
+
+                    <div class="step-circle">
+                        01
+                    </div>
+
+                    <div class="step-heading-text">
+
+                        <span>
+                            STEP ONE
+                        </span>
+
+                        <h3>
+                            Capture the issue
+                        </h3>
+
+                        <p>
+                            Take a photo or choose one from your device.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo-area">
+
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/*"
+                    >
+
+
+                    <!-- Buttons -->
+
+                    <div
+                        id="photoButtons"
+                        class="photo-buttons"
+                    >
+
+
+                        <button
+                            type="button"
+                            id="openCameraBtn"
+                            class="photo-action"
+                        >
+
+                            <span class="photo-action-icon">
+                                📷
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Open Camera
+                                </strong>
+
+                                <span>
+                                    Take a new photo
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="uploadPhotoBtn"
+                            class="photo-action"
+                        >
+
+                            <span class="photo-action-icon">
+                                ↑
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Upload Photo
+                                </strong>
+
+                                <span>
+                                    Choose from gallery
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- Preview -->
+
+                    <div
+                        id="imagePreviewWrapper"
+                        class="image-preview-wrapper hidden"
+                    >
+
+                        <img
+                            id="imagePreview"
+                            class="image-preview"
+                            alt="Selected garbage report image"
+                        >
+
+
+                        <div class="preview-toolbar">
+
+                            <span class="preview-label">
+                                Photo selected
+                            </span>
+
+                            <button
+                                type="button"
+                                id="retakeBtn"
+                                class="retake-button"
+                            >
+                                Choose another
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="photo-tip">
+
+                        💡 Take a clear photo of the garbage
+                        area so the AI can analyze it more accurately.
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STEP 2
+            ================================================== -->
+
+            <section class="report-section">
+
+
+                <div class="step-heading">
+
+                    <div class="step-circle">
+                        02
+                    </div>
+
+                    <div class="step-heading-text">
+
+                        <span>
+                            STEP TWO
+                        </span>
+
+                        <h3>
+                            Confirm the location
+                        </h3>
+
+                        <p>
+                            Your current browser location is shown below.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="location-layout">
+
+
+                    <!-- MAP -->
+
+                    <div class="map-wrap">
+
+                        <div
+                            id="map"
+                            class="location-map"
+                        ></div>
+
+
+                        <div
+                            id="mapLoading"
+                            class="map-loading"
+                        >
+
+                            <span>
+                                Finding your location...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- LOCATION DETAILS -->
+
+                    <div class="location-side">
+
+
+                        <div
+                            id="locationBox"
+                            class="location-status-card"
+                        >
+
+                            <div class="location-status-icon">
+                                ●
+                            </div>
+
+                            <strong id="locationStatus">
+                                Finding your current location...
+                            </strong>
+
+
+                            <div
+                                id="locationCoords"
+                                class="location-coords hidden"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="location-actions">
+
+                            <button
+                                type="button"
+                                id="refreshLocationBtn"
+                                class="location-button"
+                            >
+                                ↻ Refresh
+                            </button>
+
+
+                            <a
+                                id="mapsLink"
+                                class="maps-link hidden"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View on Google Maps
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STEP 3
+            ================================================== -->
+
+            <section
+                id="aiSection"
+                class="report-section hidden"
+            >
+
+
+                <div class="step-heading">
+
+                    <div class="step-circle">
+                        03
+                    </div>
+
+                    <div class="step-heading-text">
+
+                        <span>
+                            STEP THREE
+                        </span>
+
+                        <h3>
+                            Review AI analysis
+                        </h3>
+
+                        <p>
+                            CleanSpot checks the uploaded image
+                            before the report is submitted.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="ai-box">
+
+
+                    <!-- Loading -->
+
+                    <div
+                        id="aiAnalyzing"
+                        class="ai-analyzing hidden"
+                    >
+
+                        <div class="ai-loader"></div>
+
+                        <span id="aiAnalyzingText">
+                            Analyzing image...
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Results -->
+
+                    <div
+                        id="aiResults"
+                        class="ai-results hidden"
+                    >
+
+
+                        <div class="annotated-wrap">
+
+                            <img
+                                id="annotatedImage"
+                                class="annotated-image hidden"
+                                alt="AI annotated report image"
+                            >
+
+                        </div>
+
+
+                        <div class="ai-summary">
+
+
+                            <div class="ai-summary-kicker">
+                                AI ANALYSIS
+                            </div>
+
+
+                            <div
+                                id="aiSummaryLabel"
+                                class="ai-summary-label"
+                            ></div>
+
+
+                            <!-- Kept for JS compatibility,
+                                 intentionally hidden -->
+
+                            <div
+                                id="aiDetectionList"
+                                class="hidden"
+                            ></div>
+
+
+                            <div
+                                id="aiNote"
+                                class="ai-note hidden"
+                            ></div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUBMIT
+            ================================================== -->
+
+            <div class="submit-area">
+
+
+                <div class="ready-box">
+
+                    <div class="ready-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Ready to make a difference?
+                        </strong>
+
+                        <span>
+                            Your report will include the photo,
+                            AI analysis and confirmed location.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    id="sendReportBtn"
+                    class="send-report-button"
+                    disabled
+                >
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Send Report
+
+                </button>
+
+
+                <div
+                    id="messageBox"
+                    class="message-box hidden"
+                ></div>
+
+
+                <p class="submit-note">
+                    By submitting, you help bring attention
+                    to cleanliness issues in your surroundings.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- Leaflet -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+
+
+    <!-- CleanSpot JS -->
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
