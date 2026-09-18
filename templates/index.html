@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CleanSpot – Cleaner Streets Start With One Report
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body class="home">
+
+
+    <!-- ========================================================
+         HEADER
+    ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="brand"
+            >
+
+                <span class="brand-mark">
+                    🌿
+                </span>
+
+                <span class="brand-text">
+
+                    <strong>
+                        CleanSpot
+                    </strong>
+
+                    <span>
+                        Report Today, Cleaner Tomorrow
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a
+                    href="{{ url_for('home') }}"
+                    class="active"
+                >
+                    Home
+                </a>
+
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="#why-cleanspot">
+                    Why CleanSpot
+                </a>
+
+                <a href="#impact">
+                    Impact
+                </a>
+
+            </nav>
+
+
+            <a
+                href="{{ url_for('report_page') }}"
+                class="header-cta"
+            >
+                Report Now
+            </a>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================================
+         HERO
+    ========================================================= -->
+
+    <main>
+
+
+        <section class="home-hero">
+
+
+            <div class="hero-glow hero-glow-one"></div>
+
+            <div class="hero-glow hero-glow-two"></div>
+
+            <div class="hero-line"></div>
+
+
+            <!-- LEFT -->
+
+            <div class="hero-content">
+
+
+                <div class="hero-eyebrow">
+
+                    <span>
+                        🌱
+                    </span>
+
+                    AI-POWERED COMMUNITY CLEANLINESS
+
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    Cleaner streets
+
+                    <span>
+                        start with one report.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-subtitle">
+
+                    See a garbage problem?
+                    Capture it, share its location,
+                    and let CleanSpot help turn your
+                    observation into action.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="{{ url_for('report_page') }}"
+                        class="primary-button"
+                    >
+                        📷 Report an Issue
+                        →
+                    </a>
+
+
+                    <a
+                        href="#how-it-works"
+                        class="secondary-button"
+                    >
+                        See how it works
+                        ↓
+                    </a>
+
+                </div>
+
+
+                <div class="hero-features">
+
+
+                    <div class="hero-feature">
+
+                        <div class="hero-feature-icon">
+                            ◈
+                        </div>
+
+                        <div class="hero-feature-text">
+
+                            <strong>
+                                AI Detection
+                            </strong>
+
+                            <span>
+                                Analyze visible waste
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-feature">
+
+                        <div class="hero-feature-icon">
+                            ●
+                        </div>
+
+                        <div class="hero-feature-text">
+
+                            <strong>
+                                Live GPS
+                            </strong>
+
+                            <span>
+                                Locate the issue
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-feature">
+
+                        <div class="hero-feature-icon">
+                            ✓
+                        </div>
+
+                        <div class="hero-feature-text">
+
+                            <strong>
+                                Direct Report
+                            </strong>
+
+                            <span>
+                                Send to authority
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT VISUAL -->
+
+            <div class="hero-visual">
+
+
+                <div class="visual-window">
+
+
+                    <div class="visual-photo">
+
+
+                        <div class="visual-sky"></div>
+
+                        <div class="visual-sun"></div>
+
+                        <div class="visual-hill-one"></div>
+
+                        <div class="visual-hill-two"></div>
+
+
+                        <div class="visual-tree">
+
+                            <div class="visual-tree-crown"></div>
+
+                            <div class="visual-tree-trunk"></div>
+
+                        </div>
+
+
+                        <div class="visual-bin"></div>
+
+
+                        <div class="visual-report">
+
+
+                            <div class="visual-report-header">
+
+
+                                <div class="visual-report-title">
+
+                                    <div class="visual-report-title-icon">
+                                        📷
+                                    </div>
+
+                                    <strong>
+                                        New cleanliness report
+                                    </strong>
+
+                                </div>
+
+
+                                <span class="visual-status">
+                                    READY
+                                </span>
+
+
+                            </div>
+
+
+                            <div class="visual-report-line"></div>
+
+                            <div class="visual-report-line short"></div>
+
+
+                            <div class="visual-report-location">
+
+                                <span class="visual-report-location-dot"></span>
+
+                                Location will be captured
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ====================================================
+             QUOTE
+        ===================================================== -->
+
+        <section class="home-quote">
+
+            <div class="quote-box">
+
+                <span class="quote-mark">
+                    “
+                </span>
+
+                <p>
+                    Small actions can bring attention to the places
+                    that need care. CleanSpot makes that first step simple.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ====================================================
+             WHY CLEANSPOT
+        ===================================================== -->
+
+        <section
+            class="section"
+            id="why-cleanspot"
+        >
+
+
+            <div class="section-kicker">
+                WHY CLEANSPOT
+            </div>
+
+
+            <h2 class="section-title">
+                A simple way to turn
+                an observation into a report.
+            </h2>
+
+
+            <p class="section-description">
+
+                CleanSpot combines image analysis,
+                location services and direct reporting
+                into one focused reporting experience.
+
+            </p>
+
+
+            <div class="benefits-grid">
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        ◈
+                    </div>
+
+                    <h3>
+                        AI-assisted analysis
+                    </h3>
+
+                    <p>
+                        Upload a photo and the integrated
+                        YOLO model analyzes visible waste
+                        before the report is submitted.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        ●
+                    </div>
+
+                    <h3>
+                        Precise location
+                    </h3>
+
+                    <p>
+                        Browser GPS identifies the location
+                        of the reported issue and displays
+                        it on an interactive map.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        →
+                    </div>
+
+                    <h3>
+                        Direct communication
+                    </h3>
+
+                    <p>
+                        The completed report can be sent
+                        to the configured authority together
+                        with the relevant images.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ====================================================
+             HOW IT WORKS
+        ===================================================== -->
+
+        <section
+            class="how-section"
+            id="how-it-works"
+        >
+
+            <div class="how-inner">
+
+
+                <div class="section-kicker">
+                    HOW IT WORKS
+                </div>
+
+
+                <h2 class="section-title">
+                    Four simple steps.
+                    One meaningful report.
+                </h2>
+
+
+                <p class="section-description">
+
+                    The reporting process stays simple for
+                    the person using it while the application
+                    handles the technical processing in the background.
+
+                </p>
+
+
+                <div class="steps-grid">
+
+
+                    <article class="step">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <div class="step-icon">
+                            📷
+                        </div>
+
+                        <h3>
+                            Capture
+                        </h3>
+
+                        <p>
+                            Take a photo or upload an
+                            existing image.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div class="step-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Analyze
+                        </h3>
+
+                        <p>
+                            YOLO analyzes the image
+                            for visible waste.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div class="step-icon">
+                            ●
+                        </div>
+
+                        <h3>
+                            Locate
+                        </h3>
+
+                        <p>
+                            Your current GPS location
+                            is shown on the map.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step">
+
+                        <div class="step-number">
+                            04
+                        </div>
+
+                        <div class="step-icon">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Report
+                        </h3>
+
+                        <p>
+                            Submit the completed report
+                            to the configured authority.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ====================================================
+             FINAL CTA
+        ===================================================== -->
+
+        <section
+            class="final-cta"
+            id="impact"
+        >
+
+
+            <div>
+
+                <h2>
+                    See it. Snap it. Report it.
+                </h2>
+
+                <p>
+                    If you notice a garbage issue around you,
+                    take the first step and report it through CleanSpot.
+                </p>
+
+            </div>
+
+
+            <a
+                href="{{ url_for('report_page') }}"
+                class="primary-button"
+            >
+                📷 Start a Report
+                →
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer class="site-footer">
+
+        <strong>
+            🌿 CleanSpot
+        </strong>
+
+        <span>
+            · Cleaner streets start with one report.
+        </span>
+
+    </footer>
+
+
+</body>
+
+</html>
