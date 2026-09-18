@@ -1,0 +1,21 @@
+# Environment variables / secrets
+.env
+
+# Uploaded report images (not meant to be committed)
+uploads/*
+!uploads/.gitkeep
+
+# YOLO model weights (large binary - don't commit)
+model/*.pt
+
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+.venv/
+
+# OS / editor junk
+.DS_Store
+.vscode/
+*.log
